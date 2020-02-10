@@ -23,6 +23,7 @@ public class Tests {
         Properties propertiesFile = new Properties();
         try {
             propertiesFile.load(new FileReader(propertyFilePath));
+            System.out.println("BROWSER :"+propertiesFile.getProperty("BROWSER"));
             this.driver = initialiseBrowser(propertiesFile.getProperty("BROWSER"));
             System.out.println("Driver is:"+this.driver);
             this.driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
@@ -44,8 +45,10 @@ public class Tests {
     public WebDriver initialiseBrowser(String browser) {
         switch (browser) {
             case "FIREFOX":
+                System.out.println("switch returned FIREFOX DRIVER");
                 return new FirefoxDriver();
         }
+        System.out.println("switch returned NULL");
         return null;
     }
 
