@@ -37,7 +37,7 @@ public class Tests {
             System.out.println("baseURL is"+this.baseURL);
 
         } catch (Exception e) {
-            System.out.println("baseURL not initialised");
+            System.out.println("baseURL not initialised:"+e);
         }
 
     }
