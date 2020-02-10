@@ -61,7 +61,12 @@ public class Tests {
     		else System.out.println("baseURL not found");
     		Assert.assertTrue(false);
     	}
-        this.driver.get(this.baseURL);
+        try{
+            this.driver.get(this.baseURL);
+        }
+        catch(Exceptoion e){
+            System.out.println(e);
+        }
         assertPage.assertPageByTitle("Kibana");
     }
 
