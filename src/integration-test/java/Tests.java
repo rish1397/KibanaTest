@@ -19,10 +19,12 @@ public class Tests {
     public void initialize() {
     	System.out.println("initialize invoked");
         String propertyFilePath = System.getProperty("driverPropertiesFilePath");
+        System.out.println("property path is:"+propertyFilePath);
         Properties propertiesFile = new Properties();
         try {
             propertiesFile.load(new FileReader(propertyFilePath));
             this.driver = initialiseBrowser(propertiesFile.getProperty("BROWSER"));
+            System.out.println("Driver is:"+this.driver);
             this.driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
             actions = new Actions(this.driver);
             assertPage = new AssertPage(this.driver);
@@ -31,6 +33,7 @@ public class Tests {
         }
         try {
             this.baseURL = propertiesFile.getProperty("baseURL");
+            System.out.println("baseURL is"+this.baseURL);
 
         } catch (Exception e) {
             System.out.println("baseURL not initialised");
