@@ -30,7 +30,7 @@ public class Tests {
             actions = new Actions(this.driver);
             assertPage = new AssertPage(this.driver);
         } catch (Exception e) {
-            System.out.println("driver not initialised");
+            System.out.println("driver not initialised"+e);
         }
         try {
             this.baseURL = propertiesFile.getProperty("baseURL");
