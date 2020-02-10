@@ -46,6 +46,7 @@ public class Tests {
         switch (browser) {
             case "FIREFOX":
                 System.setProperty("webdriver.gecko.driver",System.getProperty("integTestResourcesDir")+"\\geckodriver");
+                System.out.println("geckodriver path is:"+System.getProperty("webdriver.gecko.driver"));
                 System.out.println("switch returned FIREFOX DRIVER");
                 return new FirefoxDriver();
         }
