@@ -45,6 +45,7 @@ public class Tests {
     public WebDriver initialiseBrowser(String browser) {
         switch (browser) {
             case "FIREFOX":
+                System.setProperty("webdriver.gecko.driver",System.getProperty("integTestResourcesDir")+"\geckodriver");
                 System.out.println("switch returned FIREFOX DRIVER");
                 return new FirefoxDriver();
         }
