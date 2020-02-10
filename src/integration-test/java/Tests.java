@@ -64,7 +64,7 @@ public class Tests {
         try{
             this.driver.get(this.baseURL);
         }
-        catch(Exceptoion e){
+        catch(Exception e){
             System.out.println(e);
         }
         assertPage.assertPageByTitle("Kibana");
