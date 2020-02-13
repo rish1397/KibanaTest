@@ -2,9 +2,9 @@ import java.io.File;
 import java.io.FileReader;
 import java.util.Properties;
 import java.util.concurrent.TimeUnit;
-
 import org.openqa.selenium.By;
 import org.openqa.selenium.Dimension;
+import org.assertj.core.groups.Properties;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.firefox.FirefoxOptions;
@@ -52,7 +52,7 @@ public class Tests {
         switch (browser) {
             case "FIREFOX":
                 FirefoxOptions options = new FirefoxOptions();
-                //options.setHeadless(true);
+                options.setHeadless(true);
                 setFirefoxDriverPath();
                 System.out.println("geckodriver path is:"+System.getProperty("webdriver.gecko.driver"));
                 System.out.println("switch returned FIREFOX DRIVER");
